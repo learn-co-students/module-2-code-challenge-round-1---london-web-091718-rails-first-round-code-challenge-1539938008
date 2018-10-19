@@ -1,0 +1,7 @@
+<h3> Welcome to <%= @heroine.super_name %>'s page!</h3><hr><br>
+
+The superhero's real name is <%= @heroine.name %>, her superpower is <b>
+  <%= link_to @heroine.power.name, power_path(@heroine.power) %>
+</b>, how cool is that?!<br><hr>
+
+<%= link_to 'Home', heroines_path %>
