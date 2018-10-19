@@ -1,12 +1,14 @@
-<h2>All Superpowers</h2>
+<h2 id="title">All Superpowers</h2>
 
 <ul>
   <% @powers.each do |power| %>
     <li>
-      <%= power.name %>
+      <%= link_to power.name.titleize, power_path(power) %>
       <br>
       Description: <%= power.description %>
     </li>
     <br>
   <% end %>
 </ul>
+
+<h5><%= link_to "Heroines", heroines_path  %></h5>

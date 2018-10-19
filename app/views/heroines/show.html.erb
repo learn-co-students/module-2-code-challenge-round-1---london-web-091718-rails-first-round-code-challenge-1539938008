@@ -1,0 +1,9 @@
+
+<h1 id="title"><%= @heroine.super_name %>'s Bio Page</h1>
+
+<p><%= @heroine.super_name %>'s true identity is <%= @heroine.name  %></p>
+
+
+<p>Her superpower is: <%= link_to @heroine.power.name.titleize, power_path(@heroine.power) %></p>
+
+<h5><%= link_to "Back", heroines_path %></h5>
