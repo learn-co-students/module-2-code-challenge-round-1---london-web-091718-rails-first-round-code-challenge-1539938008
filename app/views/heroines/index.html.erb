@@ -1,10 +1,21 @@
 <h2>All Heroines</h2>
 
+Search by power:<br>
+<%= form_tag(heroines_path, method: :get) do %>
+<%= text_field_tag(:search_by_power, params[:search_by_power]) %>
+<%= submit_tag ("Search") %>
+<% end %>
+ SEARCH BAR TO BE IMPLEMENTED (perhaps)
+ <br>
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine_path(heroine) %>
     </li>
     <br>
   <% end %>
 </ul>
+<hr>
+
+<%= link_to "Create your own female superhero!", new_heroine_path %><br>
+<%= link_to 'Click here to browse Super powers instead', powers_path %></hr><br><br>

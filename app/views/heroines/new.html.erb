@@ -1,0 +1,19 @@
+<% if flash[:errors]%>
+  <% flash[:errors].each do |oh_no| %>
+  <li>  <%= oh_no %> </li><br>
+  <% end %>
+<%end%>
+
+
+<%= form_for @heroine do |h| %>
+  <%= h.label "Heroine's real name:" %>
+  <%= h.text_field :name %><br>
+  <%= h.label "What's her cool super name?" %>
+  <%= h.text_field :super_name %><br>
+  <%= h.label "Select her super powerrr!" %>
+  <%= h.collection_select :power_id, @powers, :id, :name %><br>
+  
+  <%= h.submit 'Whicked, create!' %>
+<% end %><br>
+
+<%= link_to 'Cancel', heroines_path %>
